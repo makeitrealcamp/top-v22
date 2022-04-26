@@ -34,10 +34,11 @@
 
 **Lineamientos Proyecto Grupal**
 
-- El Figma es una guía, no necesariamente debe ser igual.
+- El Figma es una guía, el resultado no debe quedar igual.
 - Debe ser responsive (mobile first).
 - Almacenar información en una base de datos (MongoDB).
 - El backend debe estar implementado en Node.js (Express) y el frontend en React.
+- Debe implementar algo de envío de correos.
 - Debe estar desplegada en Internet (Netlify, Heroku, Vercel)
 - Debe al menos tener pruebas end-to-end con Cypress.
 - La licencia debe ser MIT.
