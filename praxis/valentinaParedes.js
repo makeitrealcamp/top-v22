@@ -23,3 +23,4 @@ function aleatorio(array){
     return parejas;
     }
 console.log(aleatorio(estudiantes));
+
