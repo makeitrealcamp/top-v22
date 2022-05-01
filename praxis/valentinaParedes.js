@@ -11,7 +11,7 @@ function aleatorio(array){
     const obtenerEstudiante = () => {
     return estudiantesAleatorio.pop();
     }
-    let parejas =[];
+    let parejas ='';
 
     let gruposposibles= Math.floor(array.length/2);
     for(let i = 1; i<=gruposposibles; i++){
