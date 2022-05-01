@@ -1,4 +1,4 @@
-# NOMBRE APELLIDO
+# Cristhian Cepeda
 
 Yo soy Cristhian Cepeda, escribo código y melodías urbanas. Nací en la capital musical de Colombia, Ibagué, pero vivo en el pueblito más cool y más pequeño del pais: Sabaneta.
 
