@@ -1,4 +1,5 @@
 function parejas(list){
+    let pairs = [];
     let nameRandom = [];
     let i = 0;
     while (i < list.length){
@@ -11,13 +12,16 @@ function parejas(list){
     
     for (let j = 1; j< list.length; j+=2){
         if(nameRandom.length ===3){
-             console.log([nameRandom.pop(), nameRandom.pop(), nameRandom.pop()])
+            //  console.log([nameRandom.pop(), nameRandom.pop(), nameRandom.pop()])
+             pairs.push([nameRandom.pop(), nameRandom.pop(), nameRandom.pop()])
+             
             }
         else{
-            console.log([nameRandom.pop(), nameRandom.pop()])
+            // console.log([nameRandom.pop(), nameRandom.pop()])
+            pairs.push([nameRandom.pop(), nameRandom.pop()])
         }
     }
-
+    return pairs
 }
 
 const a = [ "Daniela Torres",
@@ -32,4 +36,4 @@ const a = [ "Daniela Torres",
     "Crithian Cepeda",
     "Daniel Quispe",
     "Manuel Bojacá"];
-parejas(a);
+console.log(parejas(a));
