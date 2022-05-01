@@ -1,22 +1,24 @@
 function parejas(list){
-    let numberRandom = [];
+    let nameRandom = [];
     let i = 0;
     while (i < list.length){
         let random = Math.floor(Math.random() * list.length )
-        if (!numberRandom.includes(random)){
-            numberRandom.push(random)
+        if (!nameRandom.includes(list[random])){
+            nameRandom.push(list[random])
             i++
         }
     }
-    for (let j = 0; j< numberRandom.length; j+=2){
-        console.log([list[numberRandom[j]], list[numberRandom[j+1]]]) 
-
-    }
-    console.log(numberRandom)
-
     
-}
+    for (let j = 1; j< list.length; j+=2){
+        if(nameRandom.length ===3){
+             console.log([nameRandom.pop(), nameRandom.pop(), nameRandom.pop()])
+            }
+        else{
+            console.log([nameRandom.pop(), nameRandom.pop()])
+        }
+    }
 
+}
 
 const a = [ "Daniela Torres",
     "Edinael Sanguino",
@@ -29,8 +31,5 @@ const a = [ "Daniela Torres",
     "Johan Sora",
     "Crithian Cepeda",
     "Daniel Quispe",
-    "Manuel Bojacá" ];
-
-
+    "Manuel Bojacá"];
 parejas(a);
-
