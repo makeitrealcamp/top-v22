@@ -12,7 +12,6 @@ function aleatorio(array){
     return estudiantesAleatorio.pop();
     }
     let parejas ='';
-
     let gruposposibles= Math.floor(array.length/2);
     for(let i = 1; i<=gruposposibles; i++){
         if(estudiantesAleatorio.length === 3){
@@ -23,7 +22,5 @@ function aleatorio(array){
     }
     return parejas;
     }
-
-
 console.log(aleatorio(estudiantes));
 
