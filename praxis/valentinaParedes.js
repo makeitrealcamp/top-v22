@@ -15,9 +15,9 @@ function aleatorio(array){
     let gruposposibles= Math.floor(array.length/2);
     for(let i = 1; i<=gruposposibles; i++){
         if(estudiantesAleatorio.length === 3){
-            parejas = parejas + `grupo ${i}: ` + obtenerEstudiante() + " , " + obtenerEstudiante() + " y " + obtenerEstudiante();
+            parejas +=`[${obtenerEstudiante()}, ${obtenerEstudiante()}, ${obtenerEstudiante()}]`;
         }else{
-            parejas = parejas + `grupo ${i}: ` + obtenerEstudiante() + " y " + obtenerEstudiante() + "\n";
+            parejas += `[${obtenerEstudiante()}, ${obtenerEstudiante()}]`+ "\n";
         }
     }
     return parejas;
