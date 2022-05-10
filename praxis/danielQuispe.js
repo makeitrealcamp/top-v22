@@ -22,11 +22,12 @@ const randomGroup = (arr) => {
   });
   for (let i = 0; i < middle; i++) {
     if (i >= middle - 1) {
-      console.log(newArr.slice(i * 2, i * 2 + 3));
+      groups.push(newArr.slice(i * 2, i * 2 + 3));
     } else {
-      console.log(newArr.slice(i * 2, i * 2 + 2));
+      groups.push(newArr.slice(i * 2, i * 2 + 2));
     }
   }
+  return groups;
 };
 
-randomGroup(makers);
+console.log(randomGroup(makers));
