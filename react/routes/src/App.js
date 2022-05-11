@@ -21,15 +21,17 @@ function App() {
 
   return (
     <BrowserRouter>
-      <nav
-        style={{
-          borderBottom: "solid 1px",
-          paddingBottom: "1rem",
-        }}
-      >
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-      </nav>
+      {window.location.path === "about" ? null : (
+        <nav
+          style={{
+            borderBottom: "solid 1px",
+            paddingBottom: "1rem",
+          }}
+        >
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+        </nav>
+      )}
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/about" element={<About />} />

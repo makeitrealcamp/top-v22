@@ -1,10 +1,13 @@
-import Button from "./components/Button";
+import Paragrahp from "./components/Paragrahp";
+import Head from "./components/Head";
+import Card from "./components/Card";
 
 function App() {
   return (
     <div className="App">
-      <h1>Hola Make It Real</h1>
-      <Button />
+      <Head />
+      <Paragrahp />
+      <Card />
     </div>
   );
 }

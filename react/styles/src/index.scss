@@ -1,10 +1,15 @@
 /* abstracts */
-@use "./styles/abstracts/variables";
-@use "./styles/abstracts/mixins";
+@import "./styles/abstracts/variables";
+@import "./styles/abstracts/mixins";
 
 /* base */
-@use "./styles/base/base";
-@use "./styles/base/resets";
+@import "./styles/base/base";
+@import "./styles/base/resets";
 
 /* components */
-@use "./styles/components/Button.scss";
+@import "./styles/components/Button.scss";
+
+/* global */
+.primary-color {
+  color: blueviolet;
+}
