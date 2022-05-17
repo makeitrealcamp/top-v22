@@ -8,8 +8,13 @@
 
 /* components */
 @import "./styles/components/Button.scss";
+@import "./styles/components/SideBar.scss";
 
 /* global */
 .primary-color {
   color: blueviolet;
+}
+
+.App {
+  display: flex;
 }

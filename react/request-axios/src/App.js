@@ -15,14 +15,18 @@ function App() {
   axios
     .get("https://jsonplaceholder.typicode.com/posts")
     .then((response) => {
-      console.log(response.data);
+      // entra si el status es entre 100 - 399
+      // console.log(response.data);
     })
     .catch((error) => {
+      // entra si el status es 400 - 599
       console.log(error);
     })
     .finally(() => {
       console.log("Proceso finalizado");
     });
+
+  // en fecth entra al then si esta entre 100 y 599
 
   //POST
   //crear un recurso por primera vez
