@@ -3,7 +3,9 @@ import { connect } from "react-redux";
 import Theory from "./components/Theory";
 import Counter from "./components/Counter";
 import Button from "./components/Button";
-import { INCREMENT, DECREMENT } from "./store";
+import TextArea from "./components/TextArea";
+import Text from "./components/Text";
+import { INCREMENT, DECREMENT } from "./store/reducers/Count.reducer";
 
 //Principios
 //    Almacenamiento
@@ -18,6 +20,8 @@ import { INCREMENT, DECREMENT } from "./store";
 function App({ increment, decrement }) {
   return (
     <div className="App">
+      <TextArea />
+      <Text />
       <Theory />
       <Counter />
       <Button event={decrement}>Decrementar</Button>

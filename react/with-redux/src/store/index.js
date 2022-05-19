@@ -1,27 +1,19 @@
-import { createStore } from "redux";
+import { createStore, combineReducers } from "redux";
+import countReducer from "./reducers/Count.reducer";
+import textReducer from "./reducers/Text.reducer";
 
-export const INCREMENT = "INCREMENT";
-export const DECREMENT = "DECREMENT";
+const rootReducer = combineReducers({
+  textReducer,
+  countReducer,
+});
 
-const reducer = (state, action) => {
-  switch (action.type) {
-    case INCREMENT:
-      return {
-        ...state,
-        count: state.count + 1,
-      };
-    case DECREMENT:
-      return {
-        ...state,
-        count: state.count - 1,
-      };
-    default:
-      return state;
-  }
-};
+// const state = {
+//   textReducer:{
+//     text: ""
+//   },
+//   countReducer:{
+//     count: 0
+//   }
+// }
 
-const initialState = {
-  count: 0,
-};
-
-export const store = createStore(reducer, initialState);
+export const store = createStore(rootReducer);
