@@ -1,0 +1,9 @@
+//Proceso para crear un servidor y conectarlo a mongo
+
+1. npm init -y ó contestar preguntas
+2. npm i express mongoose cors --> Instalar dependencias
+3. npm i --save-dev nodemon --> Configurar el script en el package.json
+4. Crear y configurar archivo server.js a la altura del package.json (Ver archivo)
+5. crear /scr a la altura del package.sjon
+6. crear archivo /src/db.js --> Conexión node con mongo (Ver archivo)
+7. requerir connect en el server.js y ejecutarlo
