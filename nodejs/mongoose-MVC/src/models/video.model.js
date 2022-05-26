@@ -10,7 +10,7 @@ const videoSchema = new Schema(
   {
     title: String,
     url: String,
-    likes: [Number],
+    rating: [Number],
     description: String,
     isCopy: Boolean,
     published: Date,
