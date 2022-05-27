@@ -14,6 +14,8 @@ module.exports = {
     const { userId } = req.params;
 
     User.findById(userId)
+      .select("-password")
+      .populate("reviews", "title comment")
       .then((user) => res.status(200).json(user))
       .catch((err) => res.status(404).json(err));
   },

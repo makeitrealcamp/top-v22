@@ -20,6 +20,10 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+    reviews: {
+      type: [{ type: Schema.Types.ObjectId, ref: "Review" }],
+      required: false,
+    },
   },
   {
     timestamps: true,

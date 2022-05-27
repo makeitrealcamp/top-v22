@@ -4,6 +4,11 @@ const reviewSchema = new Schema(
   {
     title: String,
     comment: String,
+    user: {
+      type: Schema.Types.ObjectId, //Usuario con id único
+      ref: "User",
+      required: true,
+    },
   },
   {
     timestamps: true,
