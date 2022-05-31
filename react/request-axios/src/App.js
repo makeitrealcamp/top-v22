@@ -13,7 +13,7 @@ function App() {
   //pedir muchos recursos
   //pedir un recursos especifico (id)
   axios
-    .get("https://jsonplaceholder.typicode.com/posts")
+    .get(`${process.env.REACT_APP_HTTP_POST}posts`)
     .then((response) => {
       // entra si el status es entre 100 - 399
       // console.log(response.data);
