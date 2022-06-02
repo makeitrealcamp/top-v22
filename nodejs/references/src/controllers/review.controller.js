@@ -42,8 +42,8 @@ module.exports = {
         throw new Error("Invalid user");
       }
 
-      const review = await Review.create({ ...req.body, user: user });
-      user.review.push(review);
+      const review = await Review.create({ ...req.body, user: userId });
+      user.reviews.push(review);
       await user.save({ validateBeforeSave: false });
 
       res.status(201).json(review);

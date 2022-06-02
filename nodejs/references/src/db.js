@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 function connect() {
-  mongoose.connect(process.env.MONGO_CONNECTION);
+  mongoose.connect("mongodb://localhost:27017/references");
 
   mongoose.connection.once("open", () => {
     console.log("Connection established successfully");
