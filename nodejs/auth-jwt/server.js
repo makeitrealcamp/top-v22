@@ -2,10 +2,9 @@ const express = require("express");
 const cors = require("cors");
 const { connect } = require("./src/db");
 const userRouter = require("./src/routes/user");
-const postRouter = require("./src/routes/review");
-require("dotenv").config();
+const { auth } = require("./src/utils/auth");
 
-const port = 8000;
+const port = 8080;
 const app = express();
 connect();
 
@@ -13,8 +12,12 @@ app.use(express.json());
 app.use(cors());
 
 app.use("/users", userRouter);
-app.use("/reviews", postRouter);
+
+app.get("/", auth, (req, res) => {
+  console.log(req.user);
+  res.sendStatus(200);
+});
 
 app.listen(port, () => {
-  console.log(`Server listening on http://localhost:${port}`);
+  console.log(`App running at http://localhost:${port}`);
 });

@@ -1,11 +1,11 @@
 {
-  "name": "mongoose-mvc",
+  "name": "middlewares-cors",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "serve.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server.js"
+    "dev": "nodemon serve.js"
   },
   "keywords": [],
   "author": "",
@@ -13,9 +13,6 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.18.1",
-    "mongoose": "^6.3.4",
-    "nodemon": "^2.0.16",
-    "swagger-jsdoc": "^6.2.1",
-    "swagger-ui-express": "^4.4.0"
+    "nodemon": "^2.0.16"
   }
 }
