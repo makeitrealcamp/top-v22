@@ -3,68 +3,77 @@ import axios from "axios";
 import "./App.css";
 
 function App() {
-  const [image, setImage] = useState(null); //capturamos para mostrar base64
+  const [image, setImage] = useState(null);
+  const [file, setFile] = useState(null);
+  const [username, setUsername] = useState("");
 
-  const [username, setUsername] = useState(""); //capturamos nombre usuario
-  const [file, setFile] = useState(null); //capturamos archivo para enviar obj
-
-  const handleSubmit = async (e) => {
+  async function handleSubmit(e) {
     e.preventDefault();
 
     const data = new FormData();
     data.append("username", username);
-    data.append("file", file);
+    if (file) {
+      console.log(typeof file);
+      for (let i = 0; i < file.length; i++) {
+        //nombre de la propiedad, archivo y nombre del archivo
+        data.append(`file_${i}`, file[i], file[i].name);
+      }
+    }
 
-    const response = await axios.post("http://localhost:8080", {
-      data,
+    const response = await axios.post("http://localhost:8080/profile", data, {
       headers: {
         "Content-Type": "multipart/form-data",
       },
     });
 
     console.log(response);
-  };
+  }
 
-  const readFile = (file) => {
+  function readFile(file) {
     const reader = new FileReader();
 
-    //reader.onload = (e) => console.log(e.target.result);
+    //Result tiene el resultado de la imagen
     reader.onload = (e) => setImage(e.target.result);
+    // reader.onload = e => console.log(e.target.result)
 
+    //Como no hemos seleccionado imagen aùn
     reader.readAsDataURL(file);
-  };
+  }
 
-  const handleChange = (e) => {
-    console.dir(e.target.files);
-    readFile(e.target.files[0]);
-    setFile(e.target.files[0]);
-  };
-
-  console.log("userName", username);
+  function handleChange(e) {
+    //console.dir(e.target)
+    // console.dir(e.target.files)
+    // console.log(e.target.files[0].size)
+    // if(e.target.files.length > 0 && e.target.files[0].size < 1024 * 1024 * 5) {
+    //   readFile(e.target.files[0])
+    //   setFile(e.target.files[0])
+    // }
+    setFile(e.target.files);
+  }
 
   return (
     <div className="App">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="username">Nombre de usuario</label>
+        <label htmlFor="username">Username</label>
         <input
           type="text"
-          value={username}
-          id="username"
           name="username"
+          id="username"
           onChange={(e) => setUsername(e.target.value)}
+          value={username}
         />
         <label htmlFor="file">Imagen</label>
         <input
           type="file"
-          id="file"
-          name="file"
           accept="image/*"
           multiple
+          name="file"
+          id="file"
           onChange={handleChange}
         />
         <button>Enviar</button>
       </form>
-      {!!image && <img src={image} alt="upload review" loading="lazy" />}
+      {!!image && <img src={image} alt="upload preview" />}
     </div>
   );
 }
