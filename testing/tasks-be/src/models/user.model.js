@@ -19,9 +19,9 @@ const userSchema = new Schema(
     password: {
       type: String,
     },
-    /*   tasks: {
-    type: [{ type: Schema.Types.ObjectId, ref: 'Task' }]
-  } */
+    tasks: {
+      type: [{ type: Schema.Types.ObjectId, ref: "Task" }],
+    },
   },
   {
     timestamps: true,
