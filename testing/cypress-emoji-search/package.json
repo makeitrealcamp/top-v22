@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "license": "MIT",
   "devDependencies": {
+    "cypress": "^10.2.0",
     "prettier": "^1.17.1",
     "react-scripts": "^3.0.1"
   },
@@ -15,7 +16,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "e2e": "cypress open"
   },
   "browserslist": {
     "production": [
